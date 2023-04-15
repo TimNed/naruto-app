@@ -5,6 +5,7 @@ type Props = {
   image: string;
   characterName: string;
 };
+
 export function Card({ image, characterName }: Props) {
   return (
     <div className="card">

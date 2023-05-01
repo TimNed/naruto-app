@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 
-export function statsBar ({header, percentage}:any) {
+export function StatsBar ({header, percentage}:any) {
     return(
         <div className="bar-container">
             <div className="header">{header}</div>

@@ -1,24 +1,25 @@
-import { Card } from "./components/card";
+// import { Card } from "./components/card";
 import "./App.css";
-import { NarutoData } from "./service";
-import { useEffect, useState } from "react";
+import Character from "./pages/character";
+import Home from "./pages/home";
+// import { NarutoData } from "./service";
+// import { useEffect, useState } from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function App() {
-  const [actors, setCharacters] = useState([]);
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/character" element={<Character />} />
+      </Routes>
+    </BrowserRouter>
 
-  useEffect(() => {
-    retrieveNaruto();
-  }, []);
-
-  const retrieveNaruto = async () => {
-    await NarutoData().then((response) => {
-      setCharacters(response.data.characters);
-    });
-  };
-
-  return actors.map((item) => {
-    return <Card image={item?.images[0]} characterName={item?.name} />;
-  });
+  );
 }
 
 export default App;
